@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./App.css";
 
-function App() {
+function Login() {
   const signinRef = useRef();
   const signupRef = useRef();
 
@@ -33,8 +33,8 @@ function App() {
     });
 
     console.log(submit);
-    const response = await submit.json();
-    console.log(response.message);
+    const test = await submit.json();
+    console.log(test.message);
     toggleForms();
   };
 
@@ -55,10 +55,8 @@ function App() {
       },
     });
 
-    const response = await submit.json();
-    console.log(response.message, response.accessToken);
-
-    localStorage.setItem("webToken", response.accessToken); // Store token in localStorage
+    const test = await submit.json();
+    console.log(test.message, test.accessToken);
   };
 
   return (
@@ -103,4 +101,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;

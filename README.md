@@ -1,3 +1,9 @@
+# Blog Project - Creator/Owner Front End
+
+This is part of the Blog project of the Odin Project curriculum. Project consists of 3 parts: the back-end API, the public front end site, and a front end portal for the owner. This is the owner front end.
+
+Implmented using React framework as well as the fetch API to communicate with the Blog's back-end API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
