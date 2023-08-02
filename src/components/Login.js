@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import "./App.css";
+import "../styles/Login.css";
 
-function Login() {
+function Login(props) {
   const signinRef = useRef();
   const signupRef = useRef();
 
@@ -33,8 +33,8 @@ function Login() {
     });
 
     console.log(submit);
-    const test = await submit.json();
-    console.log(test.message);
+    const response = await submit.json();
+    console.log(response.message);
     toggleForms();
   };
 
@@ -46,7 +46,7 @@ function Login() {
     const formData = new FormData(signinRef.current);
     const dataObj = Object.fromEntries(formData.entries());
 
-    const submit = await fetch("http://localhost:3000/user/login", {
+    const submit = await fetch("http://localhost:3000/user", {
       mode: "cors",
       method: "Post",
       body: JSON.stringify(dataObj),
@@ -55,12 +55,16 @@ function Login() {
       },
     });
 
-    const test = await submit.json();
-    console.log(test.message, test.accessToken);
+    const response = await submit.json();
+    console.log(response.message, response.accessToken);
+    if (response.accessToken) {
+      localStorage.setItem("webToken", response.accessToken); // Store token in localStorage
+      props.updateToken(localStorage["webToken"]); // Call updateToken to update token state in App.js
+    }
   };
 
   return (
-    <div className="App">
+    <div className="Login">
       <div className="login-container">
         <form className="signin-form" action="" method="POST" ref={signinRef}>
           <h1>Sign In</h1>
@@ -92,7 +96,7 @@ function Login() {
             </button>
             <p>-OR-</p>
             <button type="button" onClick={toggleForms}>
-              Sign In
+              Cancel
             </button>
           </div>
         </form>

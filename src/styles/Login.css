@@ -1,4 +1,4 @@
-.App {
+.Login {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -33,9 +33,9 @@
 }
 
 button {
-  color: #00B7FF;
+  color: #00b7ff;
   text-decoration: none;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   border: 1px solid rgb(0, 183, 255);
   border-radius: 15px;
   background-color: whitesmoke;
