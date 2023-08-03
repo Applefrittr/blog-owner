@@ -38,7 +38,7 @@ function Login(props) {
     toggleForms();
   };
 
-  // Login functionm sends user credentials tothe API for authentication
+  // Login function sends user credentials tothe API for authentication
   const signIn = async (e) => {
     e.preventDefault();
 

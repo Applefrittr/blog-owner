@@ -32,7 +32,8 @@
   align-items: center;
 }
 
-button {
+button,
+.nav-links {
   color: #00b7ff;
   text-decoration: none;
   padding: 0.5rem 2rem;
@@ -41,9 +42,11 @@ button {
   background-color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  font-size: 0.75rem;
 }
 
-button:hover {
+button:hover,
+.nav-links:hover {
   cursor: pointer;
   background-color: aliceblue;
 }

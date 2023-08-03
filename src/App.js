@@ -2,7 +2,7 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import { useState } from "react";
 
-// Login in portal component.  Uses state to determine if there is a jwt in localStorage.  Effectively checks if a user is logged in or not and will render either
+// Main App.  Uses state to determine if there is a jwt in localStorage.  Effectively checks if a user is logged in or not and will render either
 // the login page or the dashboard
 function App() {
   const [token, setToken] = useState(localStorage["webToken"]);

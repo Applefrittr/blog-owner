@@ -1,0 +1,55 @@
+.Dashboard {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  color: white;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: flex-start;
+  gap: 5rem;
+}
+
+.nav-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content-container {
+  padding: 2rem;
+  flex: 1;
+  background-color: whitesmoke;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dashboard-msg {
+  padding: 1rem;
+  border: 1px solid green;
+  background-color: palegreen;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity ease-in 0.5s;
+}
+
+.reveal {
+  opacity: 1;
+}
+
+.show {
+  display: block;
+}
