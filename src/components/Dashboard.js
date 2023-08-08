@@ -6,6 +6,7 @@ import Posts from "./Posts";
 import Comments from "./Comments";
 import NewPost from "./NewPost";
 import Settings from "./Settings";
+import EditPost from "./EditPost";
 
 function Dashboard(props) {
   const [user, setUser] = useState();
@@ -77,6 +78,10 @@ function Dashboard(props) {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/posts" element={<Posts token={props.token} />} />
+            <Route
+              path="/posts/:id"
+              element={<EditPost dashMsg={dashMsg} token={props.token} />}
+            />
             <Route path="/comments" element={<Comments />} />
             <Route
               path="/posts/new"
