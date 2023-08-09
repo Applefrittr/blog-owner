@@ -33,12 +33,12 @@ function NewPost(props) {
 
   return (
     <div>
-      <h1>Dashboard NewPost</h1>
+      <h1>Create a New Blog Post</h1>
       <form ref={formRef}>
         <label htmlFor="title">Title</label>
-        <input type="text" name="title" />
+        <input type="text" name="title" required />
         <label htmlFor="text">Post Body</label>
-        <textarea name="text" rows="10" />
+        <textarea name="text" rows="10" requried />
         <button type="submit" className="new-post-submit" onClick={submitPost}>
           Submit
         </button>

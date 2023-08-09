@@ -10,6 +10,10 @@
   overflow: scroll;
 }
 
+.edit-link-container {
+  align-self: flex-end;
+}
+
 .posts-card-container {
   display: flex;
   gap: 1rem;

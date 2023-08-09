@@ -1,0 +1,33 @@
+.delete-post {
+  align-self: flex-start;
+  border: solid 1px lightcoral;
+  color: lightcoral;
+}
+
+.form-button-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.delete-modal {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: max-content;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  background-color: lightcoral;
+}
+
+.display-modal {
+  display: flex;
+}
+
+.modal-buttons-container,
+.checkbox-container {
+  display: flex;
+  gap: 1rem;
+}

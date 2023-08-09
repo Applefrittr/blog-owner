@@ -5,6 +5,11 @@ import { Link, redirect } from "react-router-dom";
 function Posts(props) {
   const [posts, setPosts] = useState();
 
+  const truncateText = (text) => {
+    if (text.length > 75) return text.substring(0, 75) + " ...";
+    else return text;
+  };
+
   useEffect(() => {
     const getPosts = async () => {
       const token = await fetch("http://localhost:3000/posts", {
@@ -24,17 +29,19 @@ function Posts(props) {
         let postLink = `/posts/${post._id}`;
         let isPublished;
         if (post.published) isPublished = { backgroundColor: "palegreen" };
-        else isPublished = { backgroundColor: "lightcoral" };
+        else isPublished = { backgroundColor: "white" };
 
         postsElement.push(
           <div key={post._id} className="post-card" style={isPublished}>
             <h2>{post.title}</h2>
             <hr />
-            <p>{post.text}</p>
+            <p>{truncateText(post.text)}</p>
             <p>{post.dated_formatted}</p>
-            <Link to={postLink} className="nav-links">
-              Edit
-            </Link>
+            <div className="edit-link-container">
+              <Link to={postLink} className="nav-links">
+                Edit
+              </Link>
+            </div>
           </div>
         );
       });
@@ -47,7 +54,7 @@ function Posts(props) {
   return (
     <div>
       <div className="posts-header">
-        <h1>Dashboard Posts</h1>
+        <h1>All Blog Posts</h1>
         <div>
           <span className="post-color">
             <div
@@ -55,6 +62,7 @@ function Posts(props) {
                 width: "15px",
                 height: "15px",
                 backgroundColor: "palegreen",
+                border: "1px solid black",
               }}
             ></div>
             Published
@@ -64,7 +72,8 @@ function Posts(props) {
               style={{
                 width: "15px",
                 height: "15px",
-                backgroundColor: "lightcoral",
+                backgroundColor: "white",
+                border: "1px solid black",
               }}
             ></div>
             Not Published
