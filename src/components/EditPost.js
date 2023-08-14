@@ -102,7 +102,7 @@ function EditPost(props) {
         {post && (
           <textarea
             name="text"
-            rows="10"
+            rows="20"
             value={post.text}
             onChange={handleChange}
           />

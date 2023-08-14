@@ -38,7 +38,7 @@ function NewPost(props) {
         <label htmlFor="title">Title</label>
         <input type="text" name="title" required />
         <label htmlFor="text">Post Body</label>
-        <textarea name="text" rows="10" requried />
+        <textarea name="text" rows="20" requried />
         <button type="submit" className="new-post-submit" onClick={submitPost}>
           Submit
         </button>

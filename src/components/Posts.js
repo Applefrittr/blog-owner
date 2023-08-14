@@ -41,6 +41,14 @@ function Posts(props) {
               <Link to={postLink} className="nav-links">
                 Edit
               </Link>
+              <a
+                href="http://google.com"
+                className="nav-links"
+                rel="noreferrer"
+                target="_blank"
+              >
+                View
+              </a>
             </div>
           </div>
         );
