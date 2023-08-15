@@ -31,6 +31,9 @@ function Posts(props) {
         if (post.published) isPublished = { backgroundColor: "palegreen" };
         else isPublished = { backgroundColor: "white" };
 
+        const siteLink = `http://localhost:3001/${post._id}`;
+        const commentsLink = `http://localhost:3002/posts/${post._id}/comments`;
+
         postsElement.push(
           <div key={post._id} className="post-card" style={isPublished}>
             <h2>{post.title}</h2>
@@ -41,14 +44,21 @@ function Posts(props) {
               <Link to={postLink} className="nav-links">
                 Edit
               </Link>
-              <a
-                href="http://google.com"
-                className="nav-links"
-                rel="noreferrer"
-                target="_blank"
-              >
-                View
-              </a>
+              {post.published && (
+                <div>
+                  <a
+                    href={siteLink}
+                    className="nav-links"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    View
+                  </a>
+                  <Link to={commentsLink} className="nav-links">
+                    Comments
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         );

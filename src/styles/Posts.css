@@ -11,8 +11,8 @@
 }
 
 .edit-link-container {
-  align-self: flex-end;
   display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 

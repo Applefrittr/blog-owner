@@ -60,9 +60,6 @@ function Dashboard(props) {
             <Link to="/posts" className="nav-links">
               Posts
             </Link>
-            <Link to="/comments" className="nav-links">
-              Comments
-            </Link>
             <Link to="/posts/new" className="nav-links">
               New Post
             </Link>
@@ -82,7 +79,10 @@ function Dashboard(props) {
               path="/posts/:id"
               element={<EditPost dashMsg={dashMsg} token={props.token} />}
             />
-            <Route path="/comments" element={<Comments />} />
+            <Route
+              path="/posts/:id/comments"
+              element={<Comments dashMsg={dashMsg} token={props.token} />}
+            />
             <Route
               path="/posts/new"
               element={<NewPost dashMsg={dashMsg} token={props.token} />}
